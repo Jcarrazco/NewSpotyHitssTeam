@@ -11,7 +11,9 @@ namespace NewSpotyHitss
     {
 
         //string connectionString = @"Server=HGDLAPCARRASCOJ\SQLEXPRESS;DataBase=Spotify;Trusted_Connection=True";
-        string connectionString = @"Data Source=10.166.143.73\SQLEXPRESS,1433;Network Library=DBMSSOCN;Initial Catalog=dbase;User ID=sa;Password=password";
+        string connectionString = @"Data Source=10.166.143.73\SQLEXPRESS,1433;
+                                    Network Library=DBMSSOCN;Initial Catalog=Spotify;
+                                    User ID=sa;Password=password";
 
         public List<Song> ListGen (string Genre)
         {
