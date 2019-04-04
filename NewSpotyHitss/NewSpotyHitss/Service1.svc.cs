@@ -29,5 +29,13 @@ namespace NewSpotyHitss
             }
             return composite;
         }
+
+        public List<Song> GetListSongContract(string Gender)
+        {
+            //Conection to DB
+            ConectionDB Conn = new ConectionDB();
+            //Use of Methods of Conn return a List of Songs
+            return  Conn.ListGen(Gender);
+        }
     }
 }

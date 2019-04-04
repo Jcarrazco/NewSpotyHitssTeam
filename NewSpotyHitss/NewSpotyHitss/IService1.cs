@@ -20,6 +20,10 @@ namespace NewSpotyHitss
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Add your service operations here
+        
+            //Operation Get List of Songs by Gen
+        [OperationContract]
+        List<Song> GetListSongContract(string Gender);
     }
 
 
