@@ -75,7 +75,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="SP\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.Debug.config">
