@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{77AAE81C-E5EC-4BCC-B961-1A8136CA331D}</ProjectGuid>
+    <ProjectGuid>{C8E0BF70-2482-4483-8F24-7CF8183B99DB}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>DataManager</RootNamespace>
     <AssemblyName>DataManager</AssemblyName>
@@ -34,6 +34,9 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConectionDB.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DB_SP\" />
