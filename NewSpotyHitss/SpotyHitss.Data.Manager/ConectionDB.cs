@@ -18,25 +18,33 @@ namespace SpotyHitss.Data.Manager
             var connectionString = ConfigurationManager.ConnectionStrings["SqlExpress"].ConnectionString;
             return connectionString;
         }
-
-        public List<Song> ListGen (string Genre)
+        
+        //Lista los resultados de una busqueda de canciones por genero
+        public OperationResult <List<Song>> ListGen (string Genre)
         {
-            //var connection = ConfigurationManager.ConnectionStrings["SQLExpress"].ConnectionString;
-            List <Song> ListResult = new List<Song>();
+            OperationResult<List<Song>> _opResult = new OperationResult<List<Song>>()
+            {
+                OpStatus = 0,
+                OpMesssage = "An error occur in the execution",
+                OpResult = new List<Song>()
+            };
+
             try
             {
                 if (null == Genre)
                 {
+                    //Excepcion no se introdujo un genero
                     throw new ArgumentNullException("Genre");
                 }
                 using (SqlConnection _sqlConn = new SqlConnection(connectionString))
                 {
                     _sqlConn.Open();
-
+                    
                     using (SqlCommand _sqlCommand = new SqlCommand("SP_List_Gen", _sqlConn))
                     {
                         _sqlCommand.CommandType = CommandType.StoredProcedure;
 
+                        //Store procedure de BD que regresa la lista de canciones
                         _sqlCommand.Parameters.AddWithValue("@Gen_to_List", Genre);
 
 
@@ -44,10 +52,11 @@ namespace SpotyHitss.Data.Manager
                         {
                             while (_reader.Read())
                             {
-                                ListResult.Add(new Song {Id = _reader.GetInt32(0),
-                                    Name = _reader.GetString(1),
-                                    Year = _reader.GetInt32(2),
-                                    Genre = _reader.GetString(3)});
+                                //agrega a una lista los resultados uno a uno
+                                _opResult.OpResult.Add(new Song {Id = _reader.GetInt32(0),
+                                                        Name = _reader.GetString(1),
+                                                        Year = _reader.GetInt32(2),
+                                                        Genre = _reader.GetString(3)});
                             }
                         };
 
@@ -59,7 +68,7 @@ namespace SpotyHitss.Data.Manager
             {
                 throw ex;
             }
-            return ListResult;
+            return _opResult;
 
         }
 

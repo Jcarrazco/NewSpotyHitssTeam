@@ -14,12 +14,12 @@ namespace NewSpotyHitss
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {     
-        public List<Song> GetListSongContract(string Gender)
+        public List<Song> GetSearchGenListSong(string Genre)
         {
-            //Conection to DB
-            ConectionDB Conn = new ConectionDB();
-            //Use of Methods of Conn return a List of Songs
-            return  Conn.ListGen(Gender);
+            //Conection to DB Instance
+            ConectionDB conn = new ConectionDB();
+            //use the method of ListGen
+            return conn.ListGen(Genre).OpResult;
         }
 
         public OperationResult<int> InsertSong(Song song)
