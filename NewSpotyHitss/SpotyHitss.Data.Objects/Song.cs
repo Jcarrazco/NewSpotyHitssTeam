@@ -4,11 +4,11 @@ using System.Linq;
 
 namespace SpotyHitss.Data.Objects
 {
-    public class Song
+    public class SongArtist
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int Year { get; set; }
-        public string Genre { get; set; }
+        public int ID_Artist { get; set; }
+        public String Artist_Name { get; set; }
+        public int ID_Song { get; set; }
+        public String Song_Name { get; set; }
     }
 }

@@ -24,7 +24,7 @@ namespace NewSpotyHitss
         
         //Operation Get List of Songs by Gen
         [OperationContract]
-        List<Song> GetListSongContract(string Gender);
+        List<SongArtist> GetListSongContract(string Artist);
 
         [OperationContract]
         string getConnection();
