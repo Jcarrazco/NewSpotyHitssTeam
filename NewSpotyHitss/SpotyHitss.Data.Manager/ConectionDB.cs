@@ -10,45 +10,40 @@ namespace SpotyHitss.Data.Manager
     public class ConectionDB
     {
 
-        string connectionString = @"Server=HGDLAPCARRASCOJ\SQLEXPRESS;DataBase=Spotify;Trusted_Connection=True";
-        //string connectionString = @"Data Source=10.166.143.73\SQLEXPRESS,1433;Network Library=DBMSSOCN;Initial Catalog=dbase;User ID=sa;Password=password";
+        string connectionString = ConfigurationManager.ConnectionStrings["SqlExpress"].ConnectionString;
 
         public static string GetConnection()
         {
             return "";
         }
 
-        public List<Song> ListGen (string Genre)
+        public OperationResult<int> ADDALBUM (string Album_Name,int Album_Year)
         {
-            //var connection = ConfigurationManager.ConnectionStrings["SQLExpress"].ConnectionString;
-            List <Song> ListResult = new List<Song>();
+            OperationResult<int> _opResult = new OperationResult<int>()
+            {
+                OpStatus = 0,
+                OpMesssage = "ALL RIGHT",
+                OpResult = -1
+            };
             try
             {
-                if (null == Genre)
+                if (null == Album_Name)
                 {
-                    throw new ArgumentNullException("Genre");
+                    throw new ArgumentNullException("Album");
                 }
                 using (SqlConnection _sqlConn = new SqlConnection(connectionString))
                 {
                     _sqlConn.Open();
 
-                    using (SqlCommand _sqlCommand = new SqlCommand("SP_List_Gen", _sqlConn))
+                    using (SqlCommand _sqlCommand = new SqlCommand("sp_Insertar_Album", _sqlConn))
                     {
                         _sqlCommand.CommandType = CommandType.StoredProcedure;
 
-                        _sqlCommand.Parameters.AddWithValue("@Gen_to_List", Genre);
+                        _sqlCommand.Parameters.AddWithValue("@Name", Album_Name);
 
+                        _sqlCommand.Parameters.AddWithValue("@ReleaseYear", Album_Year);
 
-                        using (IDataReader _reader = _sqlCommand.ExecuteReader(CommandBehavior.CloseConnection & CommandBehavior.SingleRow))
-                        {
-                            while (_reader.Read())
-                            {
-                                ListResult.Add(new Song {Id = _reader.GetInt32(0),
-                                    Name = _reader.GetString(1),
-                                    Year = _reader.GetInt32(2),
-                                    Genre = _reader.GetString(3)});
-                            }
-                        };
+                        _sqlCommand.ExecuteNonQuery();
 
                     }
                 }
@@ -56,10 +51,13 @@ namespace SpotyHitss.Data.Manager
             }
             catch (Exception ex)
             {
+                _opResult.OpMesssage = "Bad Way";
+                _opResult.OpResult = -2;
                 throw ex;
             }
-            return ListResult;
-
+            return _opResult;
         }
+
+      
     }
 }

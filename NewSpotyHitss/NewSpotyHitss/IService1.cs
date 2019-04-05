@@ -21,13 +21,14 @@ namespace NewSpotyHitss
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Add your service operations here
-        
+
         //Operation Get List of Songs by Gen
         [OperationContract]
         List<Song> GetListSongContract(string Gender);
 
         [OperationContract]
-        string getConnection();
+        string AddAlbum(int ReleaseYear, string Album);
+
     }
 
 
@@ -52,4 +53,11 @@ namespace NewSpotyHitss
             set { stringValue = value; }
         }
     }
+
+
+
+
+
+
+
 }
