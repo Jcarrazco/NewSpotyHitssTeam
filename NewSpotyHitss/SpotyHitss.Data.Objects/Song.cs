@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
-namespace NewSpotyHitss
+namespace SpotyHitss.Data.Objects
 {
     public class Song
     {

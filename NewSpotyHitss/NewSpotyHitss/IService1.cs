@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using SpotyHitss.Data.Objects;
 
 namespace NewSpotyHitss
 {
@@ -21,9 +22,12 @@ namespace NewSpotyHitss
 
         // TODO: Add your service operations here
         
-            //Operation Get List of Songs by Gen
+        //Operation Get List of Songs by Gen
         [OperationContract]
         List<Song> GetListSongContract(string Gender);
+
+        [OperationContract]
+        string getConnection();
     }
 
 
