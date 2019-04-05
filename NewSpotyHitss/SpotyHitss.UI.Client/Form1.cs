@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SpotyHitss.Data.Objects;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,8 @@ namespace SpotyHitss.UI.Client
 
         private void btnInsertSong_Click(object sender, EventArgs e)
         {
-
+            SpotyHitssProxy.Service1Client service = new SpotyHitssProxy.Service1Client();            
+            OperationResult<int> result = service.InsertSong(this.txtNameSong.Text, this.txtArtistName.Text, int.Parse(this.txtReleaseYSong.Text));
         }
 
         private void btnSearchByArtist_Click(object sender, EventArgs e)

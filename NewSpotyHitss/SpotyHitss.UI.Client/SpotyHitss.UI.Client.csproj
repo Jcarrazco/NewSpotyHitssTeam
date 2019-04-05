@@ -123,5 +123,11 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SpotyHitss.Data.Objects\SpotyHitss.Data.Objects.csproj">
+      <Project>{67198821-7171-4c87-a5b8-6829c82d5bfa}</Project>
+      <Name>SpotyHitss.Data.Objects</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
