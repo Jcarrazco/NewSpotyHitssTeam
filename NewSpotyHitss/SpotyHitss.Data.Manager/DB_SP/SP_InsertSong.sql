@@ -1,18 +1,21 @@
-IF OBJECT_ID (N'dbo.SP_InsertSong', N'FN') IS NOT NULL  
-    DROP FUNCTION SP_InsertSong;  
+use [Spotify]
+
+IF OBJECT_ID (N'dbo.SP_InsertSong') IS NOT NULL  
+    DROP PROCEDURE SP_InsertSong;  
 GO  
 
 CREATE PROCEDURE [dbo].[SP_InsertSong](
    @Name VARCHAR(50) = 'NA',
-   @ReleaseYear DATE = NULL,
-   @ArtistName VARCHAR(100) = 'NA'
+   @ReleaseYear INT = NULL,
+   @ArtistName VARCHAR(100) = 'NA',
+   @FileSong VARBINARY(MAX) = NULL
    )
 AS
 BEGIN
 	IF @ReleaseYear IS NULL
-		SET @ReleaseYear = GETDATE()
+		SET @ReleaseYear = 1900
 
-	DECLARE @Status INT = 0,
+	DECLARE @Status TINYINT = 0,
 			@TextResult VARCHAR(150) = 'The operation can not be complete',
 			@IntResult INT = 0,
 			@IdArtist INT = (SELECT [ID] FROM [Artist] WHERE [Name] = @ArtistName);
@@ -23,20 +26,22 @@ BEGIN
 		BEGIN
 			INSERT INTO [Song](
 							[Name],
-							[ReleaseYear])
+							[ReleaseYear],
+							[Data])
 			VALUES (@Name,
-					@ReleaseYear)
+					@ReleaseYear,
+					@FileSong)
 
 			SET @IntResult = SCOPE_IDENTITY();
 
 			INSERT INTO [SongArtist] (
-							[Song_ID],
-							[Artist_ID])
+							[ID_Song],
+							[ID_Artist])
 			VALUES(@IntResult, 
 					@IdArtist)
 
 			SET @Status = 1
-			SET @TextResult = 'Register inserter'
+			SET @TextResult = 'Register Added'
 
 		END
 
