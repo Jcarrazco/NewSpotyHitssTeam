@@ -5,14 +5,12 @@ using System.Data;
 using System.Data.SqlClient;
 using SpotyHitss.Data.Objects;
 
+
 namespace SpotyHitss.Data.Manager
 {
     public class ConectionDB
     {
-
-        string connectionString = @"Server=HGDLAPCARRASCOJ\SQLEXPRESS;DataBase=Spotify;Trusted_Connection=True";
-        //string connectionString = @"Data Source=10.166.143.73\SQLEXPRESS,1433;Network Library=DBMSSOCN;Initial Catalog=dbase;User ID=sa;Password=password";
-
+        
         public static string GetConnection()
         {
             return "";
@@ -20,7 +18,8 @@ namespace SpotyHitss.Data.Manager
 
         public List<Song> ListGen (string Genre)
         {
-            //var connection = ConfigurationManager.ConnectionStrings["SQLExpress"].ConnectionString;
+            //
+            string connectionString = ConfigurationManager.ConnectionStrings["ConnectDB"].ConnectionString;
             List <Song> ListResult = new List<Song>();
             try
             {
