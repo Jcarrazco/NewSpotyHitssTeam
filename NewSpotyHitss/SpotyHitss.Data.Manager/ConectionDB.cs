@@ -12,10 +12,11 @@ namespace SpotyHitss.Data.Manager
 
         string connectionString = @"Server=HGDLAPCARRASCOJ\SQLEXPRESS;DataBase=Spotify;Trusted_Connection=True";
         //string connectionString = @"Data Source=10.166.143.73\SQLEXPRESS,1433;Network Library=DBMSSOCN;Initial Catalog=dbase;User ID=sa;Password=password";
-
+        
         public static string GetConnection()
         {
-            return "";
+            var connectionString = ConfigurationManager.ConnectionStrings["SqlExpress"].ConnectionString;
+            return connectionString;
         }
 
         public List<Song> ListGen (string Genre)
