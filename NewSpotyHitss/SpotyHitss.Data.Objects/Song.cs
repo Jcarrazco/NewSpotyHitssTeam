@@ -26,4 +26,12 @@ namespace SpotyHitss.Data.Objects
         [DataMember]
         public string ArtistName { get; set; }
     }
+    public class Album
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Year { get; set; }
+
+    }
+
 }

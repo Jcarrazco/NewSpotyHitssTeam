@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1355F22B-D631-4210-8158-2EEFDA49E220}</ProjectGuid>
+    <ProjectGuid>{36D09A0E-EA16-43A1-8E99-56BE8B7EBF71}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>DataManager</RootNamespace>
     <AssemblyName>DataManager</AssemblyName>
@@ -37,6 +37,23 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DB_SP\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataObjects\DataObjects.csproj">
+      <Project>{3D2CE13F-F4EB-4D60-8F1F-E195902A20D8}</Project>
+      <Name>DataObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NewSpotyHitss\NewSpotyHitss.csproj">
+      <Project>{c822e5de-86ca-4b23-a3af-9c0ab8cea2d1}</Project>
+      <Name>NewSpotyHitss</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

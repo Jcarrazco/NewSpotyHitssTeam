@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{808F6237-100F-4FEB-BA5C-8237C1B2E2E2}</ProjectGuid>
+    <ProjectGuid>{3D2CE13F-F4EB-4D60-8F1F-E195902A20D8}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>DataObjects</RootNamespace>
     <AssemblyName>DataObjects</AssemblyName>
@@ -36,7 +36,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Song.cs" />
+    <Compile Include="Album.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

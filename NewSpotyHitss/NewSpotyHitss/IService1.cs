@@ -14,7 +14,7 @@ namespace NewSpotyHitss
     public interface IService1
     {
         // TODO: Add your service operations here
-        
+
         //Operation Get List of Songs by Gen
         [OperationContract]
         List<Song> GetSearchGenListSong(string Genre);
@@ -23,6 +23,16 @@ namespace NewSpotyHitss
         List<SongArtist> GetListSongContract(string Artist);
 
         [OperationContract]
+        string AddAlbum(int ReleaseYear, string Album);
+
+        [OperationContract]
         OperationResult<int> InsertSong(Song song);
     }
+
+
+
+
+
+
+
 }

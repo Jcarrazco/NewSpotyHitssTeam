@@ -11,9 +11,50 @@ namespace SpotyHitss.Data.Manager
     {
         string connectionString = ConfigurationManager.ConnectionStrings["SqlExpress"].ConnectionString;
         string sqlInsertSong = "SP_InsertSong @Name, @ReleaseYear, @ArtistName, @FileSong";
-        
+
         //Lista los resultados de una busqueda de canciones por genero
-        public OperationResult <List<Song>> ListGen (string Genre)
+        public OperationResult<int> ADDALBUM(string Album_Name, int Album_Year)
+        {
+            OperationResult<int> _opResult = new OperationResult<int>()
+            {
+                OpStatus = 0,
+                OpMesssage = "ALL RIGHT",
+                OpResult = -1
+            };
+            try
+            {
+                if (null == Album_Name)
+                {
+                    throw new ArgumentNullException("Album");
+                }
+                using (SqlConnection _sqlConn = new SqlConnection(connectionString))
+                {
+                    _sqlConn.Open();
+
+                    using (SqlCommand _sqlCommand = new SqlCommand("sp_Insertar_Album", _sqlConn))
+                    {
+                        _sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                        _sqlCommand.Parameters.AddWithValue("@Name", Album_Name);
+
+                        _sqlCommand.Parameters.AddWithValue("@ReleaseYear", Album_Year);
+
+                        _sqlCommand.ExecuteNonQuery();
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                _opResult.OpMesssage = "Bad Way";
+                _opResult.OpResult = -2;
+                throw ex;
+            }
+            return _opResult;
+        }
+
+        public OperationResult<List<Song>> ListGen(string Genre)
         {
             OperationResult<List<Song>> _opResult = new OperationResult<List<Song>>()
             {
