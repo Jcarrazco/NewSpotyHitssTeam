@@ -9,15 +9,8 @@ namespace SpotyHitss.Data.Manager
 {
     public class ConectionDB
     {
-
         string connectionString = ConfigurationManager.ConnectionStrings["SqlExpress"].ConnectionString;
         string sqlInsertSong = "SP_InsertSong @Name, @ReleaseYear, @ArtistName, @FileSong";
-
-        public static string GetConnection()
-        {
-            var connectionString = ConfigurationManager.ConnectionStrings["SqlExpress"].ConnectionString;
-            return connectionString;
-        }
         
         //Lista los resultados de una busqueda de canciones por genero
         public OperationResult <List<Song>> ListGen (string Genre)
@@ -39,7 +32,7 @@ namespace SpotyHitss.Data.Manager
                 using (SqlConnection _sqlConn = new SqlConnection(connectionString))
                 {
                     _sqlConn.Open();
-                    
+
                     using (SqlCommand _sqlCommand = new SqlCommand("SP_List_Gen", _sqlConn))
                     {
                         _sqlCommand.CommandType = CommandType.StoredProcedure;
@@ -53,10 +46,13 @@ namespace SpotyHitss.Data.Manager
                             while (_reader.Read())
                             {
                                 //agrega a una lista los resultados uno a uno
-                                _opResult.OpResult.Add(new Song {Id = _reader.GetInt32(0),
-                                                        Name = _reader.GetString(1),
-                                                        Year = _reader.GetInt32(2),
-                                                        Genre = _reader.GetString(3)});
+                                _opResult.OpResult.Add(new Song
+                                {
+                                    Id = _reader.GetInt32(0),
+                                    Name = _reader.GetString(1),
+                                    Year = _reader.GetInt32(2),
+                                    Genre = _reader.GetString(3)
+                                });
                             }
                         };
 
@@ -69,6 +65,53 @@ namespace SpotyHitss.Data.Manager
                 throw ex;
             }
             return _opResult;
+
+        }
+
+        public List<SongArtist> ListArtist(string Artist)
+        {
+            //var connection = ConfigurationManager.ConnectionStrings["SQLExpress"].ConnectionString;
+            List<SongArtist> ListResult = new List<SongArtist>();
+            try
+            {
+                if (null == Artist)
+                {
+                    throw new ArgumentNullException("Artist");
+                }
+                using (SqlConnection _sqlConn = new SqlConnection(connectionString))
+                {
+                    _sqlConn.Open();
+
+                    using (SqlCommand _sqlCommand = new SqlCommand("SP_Select_By_Artist", _sqlConn))
+                    {
+                        _sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                        _sqlCommand.Parameters.AddWithValue("@Artist_2List", Artist);
+
+
+                        using (IDataReader _reader = _sqlCommand.ExecuteReader(CommandBehavior.CloseConnection & CommandBehavior.SingleRow))
+                        {
+                            while (_reader.Read())
+                            {
+                                ListResult.Add(new SongArtist
+                                {
+                                    ID_Artist = _reader.GetInt32(0),
+                                    Artist_Name = _reader.GetString(1),
+                                    ID_Song = _reader.GetInt32(2),
+                                    Song_Name = _reader.GetString(3)
+                                });
+                            }
+                        };
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return ListResult;
 
         }
 

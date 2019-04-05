@@ -20,6 +20,9 @@ namespace NewSpotyHitss
         List<Song> GetSearchGenListSong(string Genre);
 
         [OperationContract]
+        List<SongArtist> GetListSongContract(string Artist);
+
+        [OperationContract]
         OperationResult<int> InsertSong(Song song);
     }
 }
