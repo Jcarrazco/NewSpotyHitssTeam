@@ -17,6 +17,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Song" nillable="true" type="tns:Song" />
+  <xs:complexType name="ArrayOfSongArtist">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SongArtist" nillable="true" type="tns:SongArtist" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSongArtist" nillable="true" type="tns:ArrayOfSongArtist" />
+  <xs:complexType name="SongArtist">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Artist_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_Artist" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_Song" type="xs:int" />
+      <xs:element minOccurs="0" name="Song_Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SongArtist" nillable="true" type="tns:SongArtist" />
   <xs:complexType name="OperationResultOfint">
     <xs:annotation>
       <xs:appinfo>

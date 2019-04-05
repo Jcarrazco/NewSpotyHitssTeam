@@ -20,8 +20,8 @@ namespace SpotyHitss.UI.Client
 
         private void btnInsertSong_Click(object sender, EventArgs e)
         {
-            SpotyHitssProxy.Service1Client service = new SpotyHitssProxy.Service1Client();            
-            OperationResult<int> result = service.InsertSong(this.txtNameSong.Text, this.txtArtistName.Text, int.Parse(this.txtReleaseYSong.Text));
+          //SpotyHitssProxy.Service1Client service = new SpotyHitssProxy.Service1Client();            
+          //  OperationResult<int> result = service.InsertSong(this.txtNameSong.Text, this.txtArtistName.Text, int.Parse(this.txtReleaseYSong.Text));
         }
 
         private void btnSearchByArtist_Click(object sender, EventArgs e)
@@ -36,6 +36,13 @@ namespace SpotyHitss.UI.Client
 
         private void btnSearchGenre_Click(object sender, EventArgs e)
         {
+            BindingList<Song> _opResult = new BindingList<Song>();
+            SpotyHitssProxy.Service1Client service = new SpotyHitssProxy.Service1Client();
+            foreach (Song s in service.GetSearchGenListSong(txtGenreSearch.Text))
+            {
+                _opResult.Add(s);
+            }
+            dataSearchByGenre.DataSource = _opResult;
 
         }
     }

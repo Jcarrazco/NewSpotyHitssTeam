@@ -83,12 +83,8 @@
     <None Include="Connected Services\SpotyHitssProxy\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\SpotyHitssProxy\SpotyHitss.UI.Client.SpotyHitssProxy.OperationResultOfint.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\SpotyHitssProxy\SpotyHitss.UI.Client.SpotyHitssProxy.Song.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
+    <None Include="Properties\DataSources\SpotyHitss.Data.Objects.Song.datasource" />
+    <None Include="Properties\DataSources\SpotyHitss.Data.Objects.SongArtist.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

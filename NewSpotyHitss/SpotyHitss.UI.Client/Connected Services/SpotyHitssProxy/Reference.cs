@@ -9,227 +9,35 @@
 //------------------------------------------------------------------------------
 
 namespace SpotyHitss.UI.Client.SpotyHitssProxy {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Song", Namespace="http://schemas.datacontract.org/2004/07/SpotyHitss.Data.Objects")]
-    [System.SerializableAttribute()]
-    public partial class Song : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ArtistNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private byte[] DataSongField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string GenreField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int YearField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ArtistName {
-            get {
-                return this.ArtistNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ArtistNameField, value) != true)) {
-                    this.ArtistNameField = value;
-                    this.RaisePropertyChanged("ArtistName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte[] DataSong {
-            get {
-                return this.DataSongField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DataSongField, value) != true)) {
-                    this.DataSongField = value;
-                    this.RaisePropertyChanged("DataSong");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Genre {
-            get {
-                return this.GenreField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.GenreField, value) != true)) {
-                    this.GenreField = value;
-                    this.RaisePropertyChanged("Genre");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Year {
-            get {
-                return this.YearField;
-            }
-            set {
-                if ((this.YearField.Equals(value) != true)) {
-                    this.YearField = value;
-                    this.RaisePropertyChanged("Year");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OperationResultOfint", Namespace="http://schemas.datacontract.org/2004/07/SpotyHitss.Data.Objects")]
-    [System.SerializableAttribute()]
-    public partial class OperationResultOfint : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OpMesssageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int OpResultField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int OpStatusField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OpMesssage {
-            get {
-                return this.OpMesssageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OpMesssageField, value) != true)) {
-                    this.OpMesssageField = value;
-                    this.RaisePropertyChanged("OpMesssage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OpResult {
-            get {
-                return this.OpResultField;
-            }
-            set {
-                if ((this.OpResultField.Equals(value) != true)) {
-                    this.OpResultField = value;
-                    this.RaisePropertyChanged("OpResult");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OpStatus {
-            get {
-                return this.OpStatusField;
-            }
-            set {
-                if ((this.OpStatusField.Equals(value) != true)) {
-                    this.OpStatusField = value;
-                    this.RaisePropertyChanged("OpStatus");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SpotyHitssProxy.IService1")]
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetSearchGenListSong", ReplyAction="http://tempuri.org/IService1/GetSearchGenListSongResponse")]
-        SpotyHitss.UI.Client.SpotyHitssProxy.Song[] GetSearchGenListSong(string Genre);
+        SpotyHitss.Data.Objects.Song[] GetSearchGenListSong(string Genre);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetSearchGenListSong", ReplyAction="http://tempuri.org/IService1/GetSearchGenListSongResponse")]
-        System.Threading.Tasks.Task<SpotyHitss.UI.Client.SpotyHitssProxy.Song[]> GetSearchGenListSongAsync(string Genre);
+        System.Threading.Tasks.Task<SpotyHitss.Data.Objects.Song[]> GetSearchGenListSongAsync(string Genre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListSongContract", ReplyAction="http://tempuri.org/IService1/GetListSongContractResponse")]
+        SpotyHitss.Data.Objects.SongArtist[] GetListSongContract(string Artist);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListSongContract", ReplyAction="http://tempuri.org/IService1/GetListSongContractResponse")]
+        System.Threading.Tasks.Task<SpotyHitss.Data.Objects.SongArtist[]> GetListSongContractAsync(string Artist);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddAlbum", ReplyAction="http://tempuri.org/IService1/AddAlbumResponse")]
+        string AddAlbum(int ReleaseYear, string Album);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddAlbum", ReplyAction="http://tempuri.org/IService1/AddAlbumResponse")]
+        System.Threading.Tasks.Task<string> AddAlbumAsync(int ReleaseYear, string Album);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertSong", ReplyAction="http://tempuri.org/IService1/InsertSongResponse")]
-        SpotyHitss.UI.Client.SpotyHitssProxy.OperationResultOfint InsertSong(SpotyHitss.UI.Client.SpotyHitssProxy.Song song);
+        SpotyHitss.Data.Objects.OperationResult<int> InsertSong(string name, string artistName, int year, byte[] songData);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertSong", ReplyAction="http://tempuri.org/IService1/InsertSongResponse")]
-        System.Threading.Tasks.Task<SpotyHitss.UI.Client.SpotyHitssProxy.OperationResultOfint> InsertSongAsync(SpotyHitss.UI.Client.SpotyHitssProxy.Song song);
+        System.Threading.Tasks.Task<SpotyHitss.Data.Objects.OperationResult<int>> InsertSongAsync(string name, string artistName, int year, byte[] songData);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -259,20 +67,36 @@ namespace SpotyHitss.UI.Client.SpotyHitssProxy {
                 base(binding, remoteAddress) {
         }
         
-        public SpotyHitss.UI.Client.SpotyHitssProxy.Song[] GetSearchGenListSong(string Genre) {
+        public SpotyHitss.Data.Objects.Song[] GetSearchGenListSong(string Genre) {
             return base.Channel.GetSearchGenListSong(Genre);
         }
         
-        public System.Threading.Tasks.Task<SpotyHitss.UI.Client.SpotyHitssProxy.Song[]> GetSearchGenListSongAsync(string Genre) {
+        public System.Threading.Tasks.Task<SpotyHitss.Data.Objects.Song[]> GetSearchGenListSongAsync(string Genre) {
             return base.Channel.GetSearchGenListSongAsync(Genre);
         }
         
-        public SpotyHitss.UI.Client.SpotyHitssProxy.OperationResultOfint InsertSong(SpotyHitss.UI.Client.SpotyHitssProxy.Song song) {
-            return base.Channel.InsertSong(song);
+        public SpotyHitss.Data.Objects.SongArtist[] GetListSongContract(string Artist) {
+            return base.Channel.GetListSongContract(Artist);
         }
         
-        public System.Threading.Tasks.Task<SpotyHitss.UI.Client.SpotyHitssProxy.OperationResultOfint> InsertSongAsync(SpotyHitss.UI.Client.SpotyHitssProxy.Song song) {
-            return base.Channel.InsertSongAsync(song);
+        public System.Threading.Tasks.Task<SpotyHitss.Data.Objects.SongArtist[]> GetListSongContractAsync(string Artist) {
+            return base.Channel.GetListSongContractAsync(Artist);
+        }
+        
+        public string AddAlbum(int ReleaseYear, string Album) {
+            return base.Channel.AddAlbum(ReleaseYear, Album);
+        }
+        
+        public System.Threading.Tasks.Task<string> AddAlbumAsync(int ReleaseYear, string Album) {
+            return base.Channel.AddAlbumAsync(ReleaseYear, Album);
+        }
+        
+        public SpotyHitss.Data.Objects.OperationResult<int> InsertSong(string name, string artistName, int year, byte[] songData) {
+            return base.Channel.InsertSong(name, artistName, year, songData);
+        }
+        
+        public System.Threading.Tasks.Task<SpotyHitss.Data.Objects.OperationResult<int>> InsertSongAsync(string name, string artistName, int year, byte[] songData) {
+            return base.Channel.InsertSongAsync(name, artistName, year, songData);
         }
     }
 }
