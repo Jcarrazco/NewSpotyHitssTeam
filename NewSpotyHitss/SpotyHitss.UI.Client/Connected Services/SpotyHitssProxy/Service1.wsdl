@@ -38,6 +38,18 @@
   <wsdl:message name="IService1_GetSearchGenListSong_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSearchGenListSongResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetListSongContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListSongContract" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListSongContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListSongContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddAlbum_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAlbum" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddAlbum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAlbumResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_InsertSong_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertSong" />
   </wsdl:message>
@@ -49,6 +61,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetSearchGenListSong" message="tns:IService1_GetSearchGenListSong_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetSearchGenListSongResponse" message="tns:IService1_GetSearchGenListSong_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetListSongContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListSongContract" message="tns:IService1_GetListSongContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListSongContractResponse" message="tns:IService1_GetListSongContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAlbum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddAlbum" message="tns:IService1_AddAlbum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddAlbumResponse" message="tns:IService1_AddAlbum_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="InsertSong">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertSong" message="tns:IService1_InsertSong_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertSongResponse" message="tns:IService1_InsertSong_OutputMessage" />
@@ -58,6 +78,24 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetSearchGenListSong">
       <soap:operation soapAction="http://tempuri.org/IService1/GetSearchGenListSong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListSongContract">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListSongContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAlbum">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddAlbum" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -80,6 +118,24 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetSearchGenListSong">
       <soap:operation soapAction="http://tempuri.org/IService1/GetSearchGenListSong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListSongContract">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListSongContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAlbum">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddAlbum" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

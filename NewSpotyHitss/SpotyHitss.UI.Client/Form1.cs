@@ -24,6 +24,22 @@ namespace SpotyHitss.UI.Client
 
         private void btnSearchByArtist_Click(object sender, EventArgs e)
         {
+            SpotyHitssProxy.Service1Client songArtistClient = new SpotyHitssProxy.Service1Client();
+
+            try
+            {
+                SpotyHitssProxy.SongArtist[] lstSong = 
+                    songArtistClient.GetListSongContract(txtArtistSearch.Text);
+                if (lstSong != null)
+                    dataSearchByArtist.DataSource = lstSong.ToList();
+                else
+                    dataSearchByArtist.DataSource = "Not found";
+                    
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
