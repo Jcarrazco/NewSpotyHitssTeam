@@ -10,7 +10,7 @@ namespace SpotyHitss.Data.Manager
     public class ConectionDB
     {
         string connectionString = ConfigurationManager.ConnectionStrings["SqlExpress"].ConnectionString;
-        string sqlInsertSong = "SP_InsertSong @Name, @ReleaseYear, @ArtistName";
+        string sqlInsertSong = "SP_InsertSong @Name, @ReleaseYear, @ArtistName, @FileSong";
 
         //Lista los resultados de una busqueda de canciones por genero
         public OperationResult<int> ADDALBUM(string Album_Name, int Album_Year)
@@ -165,22 +165,22 @@ namespace SpotyHitss.Data.Manager
                 OpResult = -1
             };
 
-            if(song != null)
+            if (song != null)
             {
                 using (SqlConnection _conn = new SqlConnection(connectionString))
                 {
                     _conn.Open();
-                    using(SqlCommand _sqlCommand = new SqlCommand(this.sqlInsertSong, _conn))
+                    using (SqlCommand _sqlCommand = new SqlCommand(this.sqlInsertSong, _conn))
                     {
                         _sqlCommand.Parameters.Add("Name", SqlDbType.VarChar);
                         _sqlCommand.Parameters.Add("ReleaseYear", SqlDbType.Int);
                         _sqlCommand.Parameters.Add("ArtistName", SqlDbType.VarChar);
-                        //_sqlCommand.Parameters.Add("FileSong", SqlDbType.VarBinary);
+                        _sqlCommand.Parameters.Add("FileSong", SqlDbType.VarBinary);
 
                         _sqlCommand.Parameters["Name"].Value = song.Name;
                         _sqlCommand.Parameters["ReleaseYear"].Value = song.Year;
                         _sqlCommand.Parameters["ArtistName"].Value = song.ArtistName;
-                        //_sqlCommand.Parameters["FileSong"].Value = song.DataSong;
+                        _sqlCommand.Parameters["FileSong"].Value = song.DataSong ?? new Byte[1];
 
                         using (IDataReader _reader = _sqlCommand.ExecuteReader(CommandBehavior.CloseConnection & CommandBehavior.SingleRow))
                         {
