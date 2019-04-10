@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,8 @@ namespace SpotyHitss.UI.Client
             {
                 Name = this.txtNameSong.Text,
                 ArtistName = this.txtArtistName.Text,
-                Year = int.Parse(this.txtReleaseYSong.Text)
+                Year = int.Parse(this.txtReleaseYSong.Text),
+                DataSong = LoadSong(this.textBox4.Text)
             };
             OperationResult<int> result = service.InsertSong(song);
             MessageBox.Show(result.OpMesssage);
@@ -69,6 +71,38 @@ namespace SpotyHitss.UI.Client
                 _opResult.Add(s);
             }
             dataSearchByGenre.DataSource = _opResult;
+        }
+
+        private void btnSearchSong_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog _ofd = new OpenFileDialog()
+                {
+                    AddExtension = true,
+                    Filter = "*.mp3|*.mp3",
+                    CheckFileExists = true,
+                    CheckPathExists = true
+                }
+            )
+            {
+                if(DialogResult.OK == _ofd.ShowDialog(this))
+                {
+                    this.textBox4.Text = _ofd.FileName;
+                }
+            }
+        }
+
+        private byte[] LoadSong(string path)
+        {
+            byte[] buffer = null;
+            using(FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read))
+            {
+                using(BinaryReader br = new BinaryReader(fs))
+                {
+                    long numBytes = new FileInfo(path).Length;
+                    buffer = br.ReadBytes((int)numBytes);
+                }
+            }
+            return buffer ?? new byte[1];
         }
     }
 }

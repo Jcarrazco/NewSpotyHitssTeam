@@ -106,6 +106,7 @@
             this.btnSearchSong.TabIndex = 9;
             this.btnSearchSong.Text = "Search";
             this.btnSearchSong.UseVisualStyleBackColor = true;
+            this.btnSearchSong.Click += new System.EventHandler(this.btnSearchSong_Click);
             // 
             // btnInsertSong
             // 
