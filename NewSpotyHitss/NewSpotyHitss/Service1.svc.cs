@@ -5,6 +5,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using SpotyHitss.Data.Manager;
+using SpotyHitss.Data.Objects;
 
 namespace NewSpotyHitss
 {
@@ -12,22 +14,32 @@ namespace NewSpotyHitss
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        public string GetData(int value)
+        public string AddAlbum(int ReleaseYear, string Album)
         {
-            return string.Format("You entered: {0}", value);
+            ConectionDB x = new ConectionDB();
+            return x.ADDALBUM(Album,ReleaseYear).OpMesssage;
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public List<Song> GetSearchGenListSong(string Genre)
         {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            //Conection to DB Instance
+            ConectionDB conn = new ConectionDB();
+            //use the method of ListGen
+            return conn.ListGen(Genre).OpResult;
+        }
+
+        public OperationResult<int> InsertSong(Song song)
+        {
+            ConectionDB conn = new ConectionDB();
+            return conn.InsertSong(song);
+        }
+
+        public List<SongArtist> GetListSongContract(string Artist)
+        {
+            //Conection to DB
+            ConectionDB Conn = new ConectionDB();
+            //Use of Methods of Conn return a List of Songs
+            return  Conn.ListArtist(Artist);
         }
     }
 }
