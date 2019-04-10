@@ -47,17 +47,14 @@
   <xs:element name="InsertSong">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="artistName" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="year" type="xs:int" />
-        <xs:element minOccurs="0" name="songData" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SpotyHitss.Data.Objects" minOccurs="0" name="song" nillable="true" type="q3:Song" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="InsertSongResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SpotyHitss.Data.Objects" minOccurs="0" name="InsertSongResult" nillable="true" type="q3:OperationResultOfint" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SpotyHitss.Data.Objects" minOccurs="0" name="InsertSongResult" nillable="true" type="q4:OperationResultOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

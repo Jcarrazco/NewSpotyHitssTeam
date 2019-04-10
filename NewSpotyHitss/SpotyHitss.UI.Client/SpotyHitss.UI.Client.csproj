@@ -83,15 +83,8 @@
     <None Include="Connected Services\SpotyHitssProxy\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\SpotyHitssProxy\SpotyHitss.UI.Client.SpotyHitssProxy.OperationResultOfint.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\SpotyHitssProxy\SpotyHitss.UI.Client.SpotyHitssProxy.Song.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\SpotyHitssProxy\SpotyHitss.UI.Client.SpotyHitssProxy.SongArtist.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
+    <None Include="Properties\DataSources\SpotyHitss.Data.Objects.Song.datasource" />
+    <None Include="Properties\DataSources\SpotyHitss.Data.Objects.SongArtist.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -103,9 +96,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
@@ -127,6 +118,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SpotyHitss.Data.Objects\SpotyHitss.Data.Objects.csproj">
+      <Project>{67198821-7171-4c87-a5b8-6829c82d5bfa}</Project>
+      <Name>SpotyHitss.Data.Objects</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -52,11 +52,11 @@
             this.txtReleaseAlbum = new System.Windows.Forms.TextBox();
             this.txtNameAlbum = new System.Windows.Forms.TextBox();
             this.tabListByGenre = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataSearchByGenre = new System.Windows.Forms.DataGridView();
-            this.btnSearchGenre = new System.Windows.Forms.Button();
-            this.txtGenreSearch = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.txtGenreSearch = new System.Windows.Forms.TextBox();
+            this.btnSearchGenre = new System.Windows.Forms.Button();
+            this.dataSearchByGenre = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabInsertSong.SuspendLayout();
             this.tabListByArtis.SuspendLayout();
@@ -298,22 +298,21 @@
             this.tabListByGenre.Text = "List by Genre";
             this.tabListByGenre.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // label9
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "NewSpotyHitss";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(17, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(36, 13);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Genre";
             // 
-            // dataSearchByGenre
+            // txtGenreSearch
             // 
-            this.dataSearchByGenre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataSearchByGenre.Location = new System.Drawing.Point(20, 50);
-            this.dataSearchByGenre.Name = "dataSearchByGenre";
-            this.dataSearchByGenre.Size = new System.Drawing.Size(731, 288);
-            this.dataSearchByGenre.TabIndex = 0;
+            this.txtGenreSearch.Location = new System.Drawing.Point(85, 15);
+            this.txtGenreSearch.Name = "txtGenreSearch";
+            this.txtGenreSearch.Size = new System.Drawing.Size(182, 20);
+            this.txtGenreSearch.TabIndex = 2;
             // 
             // btnSearchGenre
             // 
@@ -325,21 +324,22 @@
             this.btnSearchGenre.UseVisualStyleBackColor = true;
             this.btnSearchGenre.Click += new System.EventHandler(this.btnSearchGenre_Click);
             // 
-            // txtGenreSearch
+            // dataSearchByGenre
             // 
-            this.txtGenreSearch.Location = new System.Drawing.Point(85, 15);
-            this.txtGenreSearch.Name = "txtGenreSearch";
-            this.txtGenreSearch.Size = new System.Drawing.Size(182, 20);
-            this.txtGenreSearch.TabIndex = 2;
+            this.dataSearchByGenre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataSearchByGenre.Location = new System.Drawing.Point(20, 50);
+            this.dataSearchByGenre.Name = "dataSearchByGenre";
+            this.dataSearchByGenre.Size = new System.Drawing.Size(731, 288);
+            this.dataSearchByGenre.TabIndex = 0;
             // 
-            // label9
+            // label1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(17, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(36, 13);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Genre";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "NewSpotyHitss";
             // 
             // Form1
             // 
