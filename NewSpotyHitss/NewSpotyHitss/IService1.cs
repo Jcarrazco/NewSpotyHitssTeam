@@ -26,7 +26,7 @@ namespace NewSpotyHitss
         string AddAlbum(int ReleaseYear, string Album);
 
         [OperationContract]
-        OperationResult<int> InsertSong(string name, string artistName, int year, Byte[] songData=null);
+        OperationResult<int> InsertSong(Song song);
     }
 
 
