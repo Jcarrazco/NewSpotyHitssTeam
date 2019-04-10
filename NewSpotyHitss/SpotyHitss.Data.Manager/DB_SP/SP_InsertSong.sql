@@ -26,11 +26,11 @@ BEGIN
 		BEGIN
 			INSERT INTO [Song](
 							[Name],
-							[ReleaseYear],
-							[Data])
+							[ReleaseYear]
+							)
 			VALUES (@Name,
-					@ReleaseYear,
-					@FileSong)
+					@ReleaseYear
+					)
 
 			SET @IntResult = SCOPE_IDENTITY();
 

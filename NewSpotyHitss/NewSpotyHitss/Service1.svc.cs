@@ -28,9 +28,15 @@ namespace NewSpotyHitss
             return conn.ListGen(Genre).OpResult;
         }
 
-        public OperationResult<int> InsertSong(Song song)
+        public OperationResult<int> InsertSong(string name, string artistName, int year, Byte[] songData = null)
         {
             ConectionDB conn = new ConectionDB();
+            Song song = new Song()
+            {
+                Name = name,
+                ArtistName = artistName,
+                Year = year
+            };
             return conn.InsertSong(song);
         }
 

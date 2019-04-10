@@ -10,7 +10,7 @@ namespace SpotyHitss.Data.Manager
     public class ConectionDB
     {
         string connectionString = ConfigurationManager.ConnectionStrings["SqlExpress"].ConnectionString;
-        string sqlInsertSong = "SP_InsertSong @Name, @ReleaseYear, @ArtistName, @FileSong";
+        string sqlInsertSong = "SP_InsertSong @Name, @ReleaseYear, @ArtistName";
 
         //Lista los resultados de una busqueda de canciones por genero
         public OperationResult<int> ADDALBUM(string Album_Name, int Album_Year)
@@ -175,12 +175,12 @@ namespace SpotyHitss.Data.Manager
                         _sqlCommand.Parameters.Add("Name", SqlDbType.VarChar);
                         _sqlCommand.Parameters.Add("ReleaseYear", SqlDbType.Int);
                         _sqlCommand.Parameters.Add("ArtistName", SqlDbType.VarChar);
-                        _sqlCommand.Parameters.Add("FileSong", SqlDbType.VarBinary);
+                        //_sqlCommand.Parameters.Add("FileSong", SqlDbType.VarBinary);
 
                         _sqlCommand.Parameters["Name"].Value = song.Name;
                         _sqlCommand.Parameters["ReleaseYear"].Value = song.Year;
                         _sqlCommand.Parameters["ArtistName"].Value = song.ArtistName;
-                        _sqlCommand.Parameters["FileSong"].Value = song.DataSong;
+                        //_sqlCommand.Parameters["FileSong"].Value = song.DataSong;
 
                         using (IDataReader _reader = _sqlCommand.ExecuteReader(CommandBehavior.CloseConnection & CommandBehavior.SingleRow))
                         {
