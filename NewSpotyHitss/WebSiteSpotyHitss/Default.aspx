@@ -9,6 +9,16 @@
     </div>
 
     <div class="row">
+
+        <div class="col-md-4">
+            <h2>Song by Artist</h2>
+            <p>
+                Prueba de interface
+            </p>
+            <p>
+                <asp:Button ID="btnArtist" runat="server" OnClick="btnArtist_Click" Text="Search" />
+            </p>
+        </div>
         <div class="col-md-4">
             <h2>Getting started</h2>
             <p>
@@ -19,6 +29,7 @@
                 <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
             </p>
         </div>
+
         <div class="col-md-4">
             <h2>Get more libraries</h2>
             <p>
