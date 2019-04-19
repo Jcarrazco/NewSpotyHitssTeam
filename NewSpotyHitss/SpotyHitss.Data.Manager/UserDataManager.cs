@@ -8,5 +8,6 @@ namespace SpotyHitss.Data.Manager
 {
     class UserDataManager
     {
+
     }
 }
