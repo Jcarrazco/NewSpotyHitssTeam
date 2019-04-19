@@ -27,6 +27,13 @@ namespace NewSpotyHitss
 
         [OperationContract]
         OperationResult<int> InsertSong(Song song);
+
+        [OperationContract]
+        List<int> CreateUser();
+
+        [OperationContract]
+        List<string> CreateUser1(int IdCancion);
+
     }
 
 

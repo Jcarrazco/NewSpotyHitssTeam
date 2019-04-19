@@ -22,6 +22,14 @@ namespace Web.PlaylistServices
         [OperationContract]
         string borrar_playlist(string lista);
 
+
+        [OperationContract]
+        List<int> CreateUser();
+
+        [OperationContract]
+        List<string> CreateUser1(int IdCancion);
+
+
         // TODO: Add your service operations here
     }
 
