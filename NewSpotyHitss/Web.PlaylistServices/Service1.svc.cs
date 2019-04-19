@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -29,5 +31,21 @@ namespace Web.PlaylistServices
             }
             return composite;
         }
+
+        //Método para borrar una playlist
+        public string borrar_playlist(string lista)
+        {
+            string mensaje;
+            con.Open(); //abrir la conección con la variable "con"
+            using (SqlCommand cmd = new SqlCommand("borrar_playlist", con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@playlist", SqlDbType.Int).Value = lista;
+                cmd.ExecuteNonQuery();
+                mensaje = "Playlist Eliminada";
+            }
+            return mensaje;
+        }
+
     }
 }
