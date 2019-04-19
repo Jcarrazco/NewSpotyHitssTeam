@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using Academy.Apis.Common;
+//using Academy.Apis.Common;
 
 namespace Academy.Apis.Data.DataManagers
 {
@@ -17,7 +17,7 @@ namespace Academy.Apis.Data.DataManagers
         {
 
         }
-        public OperationResult<int> CreateUser(DataObjects.UserPlaylist UserData)
+        /*public OperationResult<int> CreateUser(DataObjects.UserPlaylist UserData)
         {
             OperationResult<int> _opResult = new OperationResult<int>() { OpStatus = 0, OpMessage = "No se logro ejecutar el SP", OpResult = -1 };
             
@@ -63,7 +63,7 @@ namespace Academy.Apis.Data.DataManagers
             }
             return _opResult;
 
-        }
+        }*/
 
 
     }

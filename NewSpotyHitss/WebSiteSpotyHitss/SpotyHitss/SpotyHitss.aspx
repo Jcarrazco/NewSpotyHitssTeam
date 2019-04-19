@@ -9,6 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            This page is new
         </div>
     </form>
 </body>
