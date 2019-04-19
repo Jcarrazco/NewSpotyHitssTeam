@@ -22,6 +22,8 @@ namespace Web.PlaylistServices
         [OperationContract]
         string borrar_playlist(string lista);
 
+        [OperationContract]
+        string crear_playlist(string nombre, string descripcion);
         // TODO: Add your service operations here
     }
 

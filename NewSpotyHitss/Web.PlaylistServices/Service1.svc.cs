@@ -14,6 +14,8 @@ namespace Web.PlaylistServices
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
+        SqlConnection con = new SqlConnection("server=HGDLAPMORAALEG\\SQLEXPRESS; DataBase=Spotify; integrated security = true");
+
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
@@ -44,7 +46,23 @@ namespace Web.PlaylistServices
                 cmd.ExecuteNonQuery();
                 mensaje = "Playlist Eliminada";
             }
+            con.Close();
             return mensaje;
+        }
+
+        public string crear_playlist(string nombre, string descripcion)
+        {
+            string mensaje = "Fallo la creacion";
+            con.Open();
+            using (SqlCommand cmd = new SqlCommand("modificar_playlist", con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre;
+                cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion;
+                cmd.ExecuteNonQuery();
+                mensaje = "Playlist creada";
+            }
+                return mensaje;
         }
 
     }
