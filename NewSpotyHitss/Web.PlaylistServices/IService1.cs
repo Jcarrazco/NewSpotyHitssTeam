@@ -19,6 +19,9 @@ namespace Web.PlaylistServices
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
+        [OperationContract]
+        string borrar_playlist(string lista);
+
         // TODO: Add your service operations here
     }
 
