@@ -45,5 +45,33 @@ namespace NewSpotyHitss
             //Use of Methods of Conn return a List of Songs
             return  Conn.ListArtist(Artist);
         }
+
+        //Devuelve la canción más sonada
+
+        public List<int> CreateUser()
+        {
+            List<int> _Songs = new List<int>() { };
+
+            UserDataManager Cancion = new UserDataManager();
+
+            _Songs = Cancion.CancionMasSonada();
+
+            return _Songs;
+        }
+
+
+        //Muestra en que playlist esta la cancion seleccionada
+
+        public List<string> CreateUser1(int IdCancion)
+        {
+            List<string> _Canciones = new List<string>() { };
+
+            UserDataManager userDatamanager = new UserDataManager();
+
+            _Canciones = userDatamanager.CancionEnMasPlaylist(IdCancion);
+
+            return _Canciones;
+
+        }
     }
 }

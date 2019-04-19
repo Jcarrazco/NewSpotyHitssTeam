@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
-namespace Web.PlaylistServices
+namespace Web.BinaryServices
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
@@ -31,21 +29,5 @@ namespace Web.PlaylistServices
             }
             return composite;
         }
-
-        //Método para borrar una playlist
-        public string borrar_playlist(string lista)
-        {
-            string mensaje;
-            con.Open(); //abrir la conección con la variable "con"
-            using (SqlCommand cmd = new SqlCommand("borrar_playlist", con))
-            {
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@playlist", SqlDbType.Int).Value = lista;
-                cmd.ExecuteNonQuery();
-                mensaje = "Playlist Eliminada";
-            }
-            return mensaje;
-        }
-
     }
 }
