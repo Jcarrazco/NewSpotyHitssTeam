@@ -224,6 +224,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="SpotyHitss\AddPlaylistSong.aspx" />
     <Content Include="SpotyHitss\IndexModificarPlaylist.aspx" />
     <Content Include="SpotyHitss\SpotyHitss.aspx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -381,6 +382,14 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
+    <Compile Include="SpotyHitss\AddPlaylistSong.aspx.cs">
+      <DependentUpon>AddPlaylistSong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SpotyHitss\AddPlaylistSong.aspx.designer.cs">
+      <DependentUpon>AddPlaylistSong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SpotyHitss\fddfsfd.cs" />
     <Compile Include="SpotyHitss\IndexModificarPlaylist.aspx.cs">
       <DependentUpon>IndexModificarPlaylist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
