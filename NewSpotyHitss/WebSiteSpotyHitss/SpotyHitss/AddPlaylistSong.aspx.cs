@@ -37,11 +37,11 @@ namespace WebSiteSpotyHitss.SpotyHitss
                             {
                                 _sqlCommand.CommandType = CommandType.StoredProcedure;
                                 _sqlCommand.Parameters.Add("ID_playlist", SqlDbType.Int);
-                                _sqlCommand.Parameters.Add("ID_User", SqlDbType.Int);
+                                _sqlCommand.Parameters.Add("ID_Song", SqlDbType.Int);
 
 
                                 _sqlCommand.Parameters["ID_playlist"].Value = int.Parse(txtPlaylist.Text);
-                                _sqlCommand.Parameters["ID_User"].Value = int.Parse(txtSong.Text);
+                                _sqlCommand.Parameters["ID_Song"].Value = int.Parse(txtSong.Text);
                                 _sqlCommand.ExecuteNonQuery();
 
                                 _sqlConn.Close();

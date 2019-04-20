@@ -4,11 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title> ADD SONG TO PLAYLIST</title>
-     <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/bundles/modernizr") %>
-    </asp:PlaceHolder>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+      <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+     <webopt:bundlereference runat="server" path="~/Content/css" />
 </head>
 <body>
 <form id="form1" runat="server">
@@ -19,6 +16,7 @@
                      <a class="navbar-brand" runat="server" >PLAYLIST AND SONG</a>
                 </div>
                 <div class="navbar-collapse collapse">
+                    <a href="../App_Data/">../App_Data/</a>
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="IndexModificarPlaylist.aspx">HOME</a></li>
                         <li><a runat="server" href="AddPlaylistSong.aspx">ADD-SONG</a></li>
@@ -28,6 +26,8 @@
                     </ul>               
               </div>
           </div>
+ </div>
+
 
  <div class="row">  
         <div class="col-md-5">
