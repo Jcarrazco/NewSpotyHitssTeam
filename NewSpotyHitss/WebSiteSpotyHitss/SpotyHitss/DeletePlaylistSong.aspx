@@ -37,13 +37,13 @@
                 <div class="form-horizontal">
                     <h4>Use a local account to log in.</h4>                 
                     <div class="form-group">
-                        <asp:Label runat="server" CssClass="col-md-2 control-label">ID OR NAME PLAYLIST</asp:Label>
+                        <asp:Label runat="server" CssClass="col-md-2 control-label">ID PLAYLIST</asp:Label>
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="txtPlaylist" CssClass="form-control" TextMode="SingleLine" />                         
                         </div>
                     </div>
                     <div class="form-group">
-                        <asp:Label runat="server" CssClass="col-md-2 control-label">ID OR NAME SONG</asp:Label>
+                        <asp:Label runat="server" CssClass="col-md-2 control-label">ID SONG</asp:Label>
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="txtSong" TextMode="SingleLine" CssClass="form-control" />
                            <asp:Label ID="lblValidacion1" runat="server" Text=""></asp:Label>
