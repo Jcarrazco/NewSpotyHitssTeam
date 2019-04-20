@@ -389,7 +389,6 @@
     <Compile Include="SpotyHitss\AddPlaylistSong.aspx.designer.cs">
       <DependentUpon>AddPlaylistSong.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SpotyHitss\fddfsfd.cs" />
     <Compile Include="SpotyHitss\IndexModificarPlaylist.aspx.cs">
       <DependentUpon>IndexModificarPlaylist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
