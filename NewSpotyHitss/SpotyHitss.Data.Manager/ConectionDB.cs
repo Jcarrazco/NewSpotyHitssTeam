@@ -9,7 +9,7 @@ namespace SpotyHitss.Data.Manager
 {
     public class ConectionDB
     {
-        string connectionString = ConfigurationManager.ConnectionStrings["SqlExpress"].ConnectionString;
+        string connectionString = ConfigurationManager.ConnectionStrings["LocalSpotyHitss"].ConnectionString;
         string sqlInsertSong = "SP_InsertSong @Name, @ReleaseYear, @ArtistName, @FileSong";
 
         //Lista los resultados de una busqueda de canciones por genero

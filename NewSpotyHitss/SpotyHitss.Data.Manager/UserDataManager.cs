@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace SpotyHitss.Data.Manager
 {
@@ -12,7 +13,7 @@ namespace SpotyHitss.Data.Manager
     {
         //Conexion para SQL 
 
-        string connectionString = "Server=HGDLAPRANGELTG\\SQLEXPRESS;DataBase=Spotify;Trusted_Connection=True";
+        string connectionString = ConfigurationManager.ConnectionStrings["LocalSpotyHitss"].ConnectionString;
         string MasSonada = "Cancion_mas_sonada";
         string CancionPlayList = "Cancion_en_que_playlist";
         /*static UserDatamanager()
